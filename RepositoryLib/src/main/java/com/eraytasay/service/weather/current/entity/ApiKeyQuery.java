@@ -5,22 +5,22 @@ import jakarta.persistence.*;
 import java.util.List;
 
 @Entity
-@Table(name = "key_queries")
-public class KeyQuery {
+@Table(name = "api_key_queries")
+public class ApiKeyQuery {
     @Id
-    @Column(name = "key_query_id")
+    @Column(name = "api_key_query_id")
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     public int id;
 
-    @Column(unique = true, nullable = false)
-    public String key;
+    @Column(name = "api_key", unique = true, nullable = false)
+    public String apiKey;
 
     @Column(nullable = false)
     public int count;
 
-    @OneToMany(mappedBy = "key_query_id")
-    public List<GeocodingQuery> m_geocodingQueries;
+    @OneToMany(mappedBy = "apiKeyQuery")
+    public List<GeocodingQuery> geocodingQueries;
 
-    @OneToMany(mappedBy = "key_query_id")
+    @OneToMany(mappedBy = "apiKeyQuery")
     public List<CurrentWeatherDataApiQuery> currentWeatherDataApiQueries;
 }

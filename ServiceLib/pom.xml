@@ -16,5 +16,11 @@
             <artifactId>DtoLib</artifactId>
             <version>${current_weather_data_service_app.version}</version>
         </dependency>
+
+        <dependency>
+            <groupId>com.eraytasay</groupId>
+            <artifactId>RepositoryLib</artifactId>
+            <version>${current_weather_data_service_app.version}</version>
+        </dependency>
     </dependencies>
 </project>

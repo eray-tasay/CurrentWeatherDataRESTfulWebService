@@ -8,6 +8,7 @@ import java.time.LocalDateTime;
 @Table(name = "current_weather_data_api_queries")
 public class CurrentWeatherDataApiQuery {
     @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "current_weather_data_api_query_id")
     public int id;
 
@@ -17,7 +18,7 @@ public class CurrentWeatherDataApiQuery {
     @Column(name = "query_datetime", nullable = false)
     public LocalDateTime queryDatetime = LocalDateTime.now();
 
-    @JoinColumn(name = "key_query_id")
+    @JoinColumn(name = "api_key_query_id")
     @ManyToOne
-    public KeyQuery key;
+    public ApiKeyQuery apiKeyQuery;
 }

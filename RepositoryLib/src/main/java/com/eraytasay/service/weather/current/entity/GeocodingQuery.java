@@ -8,6 +8,7 @@ import java.time.LocalDateTime;
 @Table(name = "geocoding_queries")
 public class GeocodingQuery {
     @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "geocoding_query_id")
     public int id;
 
@@ -17,7 +18,7 @@ public class GeocodingQuery {
     @Column(name = "query_datetime", nullable = false)
     public LocalDateTime queryDatetime = LocalDateTime.now();
 
-    @JoinColumn(name = "key_query_id")
+    @JoinColumn(name = "api_key_query_id")
     @ManyToOne
-    public KeyQuery key;
+    public ApiKeyQuery apiKeyQuery;
 }
