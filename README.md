@@ -3,7 +3,7 @@ This Web service has some features that OpenWeather's service does not have. Fir
 To find out the location of the place, it first consumes OpenWeather's Geocoding API (https://openweathermap.org/api/geocoding-api). Even though there is a built-in 
 Geocoding feature in their service, it is deprecated. Secondly, OpenWeather's service requires users to input an API key; this Web service does not. 
 In this case it uses the default API key. Lastly, this Web service logs the requests in terms of their API keys. Please note that this project is not a project that
-competes with OpenWeather. It is just a learning project. Web service end points are listed below. Please consult the OpenWeather documentations for additional information about request parameters.
+competes with OpenWeather. It is just a learning project. Web service endpoints are listed below. Please consult OpenWeather documentation for additional information about request parameters.
 
 ```
 /api/weather/current/coord?lat={latitude}&lon={longitude}[&appid={API key}][&units={units}][&lang={language}]
