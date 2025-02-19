@@ -163,6 +163,31 @@ Some example requests and their outputs are given below:
     "cod": 200
 }
 ```
+Now I am going to explain the database tables. First, I give the schema of the database:
 
-Database explaination will be added.
+<img width="502" alt="databaseSchema" src="https://github.com/user-attachments/assets/f72a14a4-b483-435b-a7af-86a9db798454" />
 
+The api_key_queries table shows how many times an API key is used to request OpenWeather's services (both the current weather data service and geocoding service). It is given with some test data in it below:
+```
+API_KEY_QUERY_ID  	API_KEY  	                        COUNT  
+1	                da8af116d20ecb15078a54947b942bd3	7
+2	                691d19d137643d975b9c9ce57529574f	3
+```
+The current_weather_data_api_queries table shows how many times and when API keys were used to request the OpenWeather current weather data service. This table is given below:
+```
+CURRENT_WEATHER_DATA_API_QUERY_ID   COUNT   QUERY_DATETIME                API_KEY_QUERY_ID  
+1                                   1       2025-02-19 08:02:01.90053     1
+2                                   3       2025-02-19 08:02:23.382043    1
+3                                   5       2025-02-19 08:02:29.965124    1
+4                                   1       2025-02-19 08:03:32.343472    2
+5                                   7       2025-02-19 08:03:40.075724    1
+6                                   3       2025-02-19 08:03:57.283828    2
+```
+The geocoding_queries table shows how many times and when API keys were used to request the OpenWeather Geocoding API. This table is given below:
+```
+GEOCODING_QUERY_ID      COUNT   QUERY_DATETIME                 API_KEY_QUERY_ID  
+1                       2       2025-02-19 08:02:23.256917     1
+2                       4       2025-02-19 08:02:29.844741     1
+3                       6       2025-02-19 08:03:39.974133     1
+4                       2       2025-02-19 08:03:57.187405     2
+```
