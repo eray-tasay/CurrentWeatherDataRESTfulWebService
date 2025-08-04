@@ -1,9 +1,8 @@
-This project is a Web service that provides current weather data. To do that, OpenWeather's current weather data service is consumed (https://openweathermap.org/current). 
-This Web service has some features that OpenWeather's service does not have. First, in addition to accepting longitude and latitude, it also accepts place names. 
+This project is a RESTful web service that provides current weather data. To do that, OpenWeather's current weather data service is consumed (https://openweathermap.org/current). 
+This RESTful web service has some features that OpenWeather's service does not have. First, in addition to accepting longitude and latitude, it also accepts place names. 
 To find out the location of the place, it first consumes OpenWeather's Geocoding API (https://openweathermap.org/api/geocoding-api). Even though there is a built-in 
 Geocoding feature in their service, it is deprecated. Secondly, OpenWeather's service requires users to input an API key; this Web service does not. 
-In this case it uses the default API key. Lastly, this Web service logs the requests in terms of their API keys. Please note that this project is not a project that
-competes with OpenWeather. It is just a learning project. Web service endpoints are listed below. Please consult OpenWeather documentation for additional information about request parameters.
+In this case it uses the default API key. Lastly, this Web service logs the requests in terms of their API keys. Web service endpoints are listed below.
 
 ```
 /api/weather/current/coord?lat={latitude}&lon={longitude}[&appid={API key}][&units={units}][&lang={language}]
